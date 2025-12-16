@@ -1,66 +1,47 @@
-# 🚀 DevTinder - Frontend
+# DevTinder
 
-The frontend of **DevTinder** — a developer discovery and collaboration platform — built with **React + Vite** and styled using **TailwindCSS** with **DaisyUI**.
+DevTinder is a web application designed to connect developers with potential job opportunities and projects. It allows users to create profiles, showcase their skills, and match with companies or projects that align with their expertise.
 
----
+## Features
 
-## ✅ Features & Setup Progress
+- User authentication and profile management
+- Skill tagging and search functionality
+- Project and job listing
+- Matching algorithm to connect users with relevant opportunities
+- Real-time chat functionality
+- Responsive design for mobile and desktop users
 
-- ⚡ **Project Scaffolding**
+## Technologies Used
 
-  - Initialized using `Vite + React` via `npm` for fast development and optimized builds.
+- Frontend: React, Redux, Tailwind CSS
+- Backend: Node.js, Express, MongoDB
+- Authentication: JWT, bcrypt
+- Real-time communication: Socket.io
+- Deployment: Docker, AWS
 
-- 🧹 **Codebase Cleanup**
+## AWS Frontend Deployment :
 
-  - Removed boilerplate code and unnecessary files/folders to maintain a clean structure.
+- Create new EC2 instance with Ubuntu Server
+- Install Node.js and MongoDB
+- Clone the DevTinder repository
+- Install dependencies using `npm install`
+- Start the server using `npm start`
+- Configure security groups to allow HTTP and WebSocket traffic
+- Set up a reverse proxy using Nginx to handle incoming requests
+- Configure SSL using Let's Encrypt for secure connections
 
-- 🎨 **UI Framework**
+## AWS Backend Deployment :
 
-  - Installed and configured **DaisyUI** for utility-first component styling with TailwindCSS.
-
-- 🧭 **Routing Setup**
-
-  - Implemented **React Router** using `BrowserRouter`.
-  - Configured nested routes using `Outlet` for layout consistency.
-
-- 🧱 **Component Architecture**
-
-  - Added a responsive **Navbar**.
-  - Created a reusable **Footer** component.
-
-- 🔐 **Authentication UI**
-
-  - Designed the **Login Page**.
-  - Installed **Axios** for API integration.
-
-- 🌐 **Backend Integration**
-  - Enabled **CORS** on the backend server.
-  - Configured middleware with `credentials: true` to support secure, cookie-based sessions.
-
----
-
-## 📁 Tech Stack
-
-- **Frontend Framework**: React (with Vite)
-- **Styling**: Tailwind CSS + DaisyUI
-- **Routing**: React Router DOM
-- **HTTP Client**: Axios
-
----
-
-## 📌 Next Steps
-
-- [ ] Add user registration and profile pages
-- [ ] Integrate real-time developer matching
-- [ ] Add protected routes and auth token management
-- [ ] Unit testing and responsive design improvements
-
----
-
-## 🛠️ Setup Instructions (Coming Soon)
-
-> To be added after backend & auth flow integration
-
----
-
-Let me know if you'd like badges, screenshots, or deploy instructions added!
+- Allowed EC2 Instance Security Groups to allow listening on 3000 for backend
+- npm install pm2 -g
+- pm2 = Daemon process that runs 24 \* 7 in the background so that you can get rid of terminal
+- pm2 start npm --start
+- pm2 logs - check logs
+- pm2 flush npm - Flush the logs
+- pm2 list - List of processes
+- pm2 stop `npm` - Stop process here npm is the name of the process
+- pm2 delete `npm` - Delete the process npm
+- pm2 start npm --name "DevTinder-Backend" -- start
+- Update Nginx proxy pass to pass the API calls to localhost : 3000
+- Restart Nginx - sudo systemctl restart nginx
+- Check if the /api/feed works or not
