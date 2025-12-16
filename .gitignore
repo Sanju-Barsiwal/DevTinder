@@ -1,11 +1,14 @@
-devtinder-backend/node_modules/*
-devtinder-ui/node_modules/*
-devtinder-ui/package-lock.json
-devtinder-backend/package-lock.json
-.env*
+# Node
+node_modules/
+dist/
+dist-ssr/
+
+# Environment variables
+.env
+.env.*
 
 # Logs
-logs
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -13,20 +16,15 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# OS files
+.DS_Store
 
-# Editor directories and files
+# Editor / IDE
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-
-
